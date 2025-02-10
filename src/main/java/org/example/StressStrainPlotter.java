@@ -53,13 +53,13 @@ public class StressStrainPlotter {
         controlPanel.add(new JLabel("Poisson Ratio:"));
         controlPanel.add(poissonField);
 
-        JPanel buttonPanel = new JPanel(new GridLayout(1, 3));
-        buttonPanel.add(plotButton);
-        buttonPanel.add(generateAPDLButton);
-        buttonPanel.add(switchInputButton);
+        //JPanel buttonPanel = new JPanel(new GridLayout(1, 3));
+        controlPanel.add(plotButton);
+        controlPanel.add(generateAPDLButton);
+        controlPanel.add(switchInputButton);
 
         frame.add(controlPanel, BorderLayout.NORTH);
-        frame.add(buttonPanel, BorderLayout.WEST);
+        //frame.add(buttonPanel, BorderLayout.WEST);
 
         // Input and output areas
         inputArea = new JTextArea(10, 20);
