@@ -112,7 +112,7 @@ public class StressStrainPlotter {
 
             XYSeriesCollection dataset = new XYSeriesCollection(series);
             JFreeChart chart = ChartFactory.createXYLineChart(
-                    materialField.getText()+" Stress-Strain Curve", "Strain [-]", "Stress [MPa]",
+                    materialField.getText()+" --- Stress-Strain Curve", "Strain [-]", "Stress [MPa]",
                     dataset
             );
 
