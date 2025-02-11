@@ -133,9 +133,11 @@ public class StressStrainPlotter {
                     "\n" +
                     "! NOTE: Any data that requires units (such as mass) is assumed to be in the consistent solver unit system.\n" +
                     "\n" +
-                    "! See Solving Units in the help system for more information.");
+                    "! See Solving Units in the help system for more information.\n");
 
-            apdl.append("/prep7\n");
+            apdl.append("\n");
+            apdl.append("/prep7");
+            apdl.append("\n");
             apdl.append("MPTEMP,,,,,,,,\n");
             apdl.append("MPTEMP, 1, ").append(temperatureField.getText()).append("\n");
 
@@ -149,12 +151,15 @@ public class StressStrainPlotter {
             apdl.append("MPDATA, EX, MATID, , ").append(youngsModulus).append("\n");
             apdl.append("MPDATA, PRXY, MATID, , ").append(poissonField.getText()).append("\n");
 
+            apdl.append("\n");
             String mesh = meshType.getSelectedItem().toString();
             String elementType = mesh.equals("Tetrahedrons") ? "SOLID92" : "SOLID95";
             apdl.append("ET, MATID, ").append(elementType).append("\n");
 
             apdl.append("TB, MELA, MATID, 1, ").append(lines.length).append("\n");
             apdl.append("TBTEMP, ").append(temperatureField.getText()).append("\n");
+
+            apdl.append("\n");
 
             for (String line : lines) {
                 String[] values = line.trim().split("\\s+");
